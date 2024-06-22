@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import '../models/task.dart';
 import '../widgets/task_tile.dart';
 
@@ -12,7 +11,7 @@ class TaskListScreen extends StatefulWidget {
 }
 
 class _TaskListScreenState extends State<TaskListScreen> {
-  String _selectedStatus = 'All'; // Default filter
+  String _selectedStatus = 'All';
 
   @override
   Widget build(BuildContext context) {
@@ -34,40 +33,40 @@ class _TaskListScreenState extends State<TaskListScreen> {
         value: 'All',
         child: Text(
           'All',
-          style: TextStyle(color: Colors.white), // Set the text color to white
+          style: TextStyle(color: Colors.white),
         ),
       ),
       const PopupMenuItem<String>(
         value: 'To do',
         child: Text(
           'To do',
-          style: TextStyle(color: Colors.white), // Set the text color to white
+          style: TextStyle(color: Colors.white),
         ),
       ),
       const PopupMenuItem<String>(
         value: 'In Progress',
         child: Text(
           'In Progress',
-          style: TextStyle(color: Colors.white), // Set the text color to white
+          style: TextStyle(color: Colors.white),
         ),
       ),
       const PopupMenuItem<String>(
         value: 'Done',
         child: Text(
           'Done',
-          style: TextStyle(color: Colors.white), // Set the text color to white
+          style: TextStyle(color: Colors.white), 
         ),
       ),
        const PopupMenuItem<String>(
         value: 'Bug',
         child: Text(
           'Bug',
-          style: TextStyle(color: Colors.white), // Set the text color to white
+          style: TextStyle(color: Colors.white),
         ),
       ),
     ],
-    icon: const Icon(Icons.more_vert, color: Colors.white), // Set the icon color to white
-    color: Colors.black, // Set the background color of the popup menu to black
+    icon: const Icon(Icons.more_vert, color: Colors.white),
+    color: Colors.black, 
   ),
 ],
 
@@ -82,12 +81,10 @@ class _TaskListScreenState extends State<TaskListScreen> {
             return Task.fromMap(doc.data() as Map<String, dynamic>);
           }).toList();
 
-          // Apply filtering based on selected status
           List<Task> filteredTasks = tasks;
           if (_selectedStatus != 'All') {
             print(_selectedStatus);
             filteredTasks = tasks.where((task) => task.status == _selectedStatus).toList();
-            // print(filteredTasks);
           }
 
           return ListView.builder(

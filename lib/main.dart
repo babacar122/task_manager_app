@@ -5,10 +5,6 @@ import 'screens/add_task_screen.dart';
 import 'screens/edit_task_screen.dart';
 import 'screens/task_list_screen.dart';
 
-class ApiConstants {
-  static String baseUrl = 'https://jsonplaceholder.typicode.com';
-  static String usersEndpoint = '/users';
-}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -32,7 +32,7 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Modifier Tache'),
+        title: const Text('Modifie la Tache'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -50,7 +50,7 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
             const SizedBox(height: 16),
             TextField(
               controller: _descriptionController,
-              maxLines: null, // Allows the TextField to expand vertically
+              maxLines: null,
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
                 labelText: 'Description',
@@ -82,10 +82,10 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
             ),
             const SizedBox(height: 20),
           Container(
-  width: double.infinity, // Make button full width
+  width: double.infinity,
   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
   decoration: BoxDecoration(
-    color: Colors.black, // Background color
+    color: Colors.black,
     borderRadius: BorderRadius.circular(12),
   ),
   child: ElevatedButton(
@@ -99,7 +99,6 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
         status: _selectedStatus,
       );
 
-      // Update task in Firestore
       await FirebaseFirestore.instance
           .collection('tasks')
           .doc(updatedTask.id)
@@ -109,18 +108,18 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
     },
     style: ElevatedButton.styleFrom(
       foregroundColor: Colors.white, 
-      backgroundColor: Colors.black, // Text color
-      padding: EdgeInsets.zero, // No padding from the ElevatedButton itself
+      backgroundColor: Colors.black,
+      padding: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
     ),
     child: Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16), // Padding inside the button
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
       child: const Text(
         'Mettre a jour Tache',
         style: TextStyle(
-          color: Colors.white, // Text color
+          color: Colors.white,
           fontSize: 16,
         ),
       ),

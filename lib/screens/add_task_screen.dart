@@ -81,10 +81,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             ),
             const SizedBox(height: 20),
           Container(
-  width: double.infinity, // Make button full width
-  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16), // Adjust vertical and horizontal padding
+  width: double.infinity,
+  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
   decoration: BoxDecoration(
-    color: Colors.black, // Background color
+    color: Colors.black,
     borderRadius: BorderRadius.circular(12),
   ),
   child: ElevatedButton(
@@ -105,18 +105,18 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
     },
     style: ElevatedButton.styleFrom(
       foregroundColor: Colors.white,
-      backgroundColor: Colors.black, // Background color
-      padding: EdgeInsets.zero, // No padding from the ElevatedButton itself
+      backgroundColor: Colors.black,
+      padding: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
     ),
     child: Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16), // Padding inside the button
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
       child: const Text(
         'Enregistrer tache',
         style: TextStyle(
-          color: Colors.white, // Text color
+          color: Colors.white,
           fontSize: 16,
         ),
       ),
